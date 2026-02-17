@@ -14,12 +14,6 @@ type Product = {
     stock: number;
 };
 
-type ProductPageProps = {
-    params: {
-        id: string;
-    };
-};
-
 async function fetchProduct(id: string): Promise<Product> {
 
     const res = await fetch(`https://dummyjson.com/products/${id}`, {
@@ -34,7 +28,7 @@ async function fetchProduct(id: string): Promise<Product> {
     return data;
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params }: any) {
     const { id } = await params;
 
     const product = await fetchProduct(id);

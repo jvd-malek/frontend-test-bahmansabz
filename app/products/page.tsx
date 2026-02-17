@@ -44,7 +44,7 @@ type ProductsPageProps = {
   };
 };
 
-export default async function ProductsPage({ searchParams }: ProductsPageProps) {
+export default async function ProductsPage({ searchParams }: any) {
   const search = await searchParams;
 
   const page = Number(search?.page ?? "1") || 1;
