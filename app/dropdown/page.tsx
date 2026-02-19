@@ -1,14 +1,7 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
 import DropdownComponent, { DropdownOption, DropdownGroup } from "@/components/dropdown/dropdown";
-
-export const metadata: Metadata = {
-  title: "کامپوننت Dropdown پیشرفته | بهمن سبز",
-  description:
-    "نمونه‌های مختلف کامپوننت Dropdown پیشرفته با جستجو، انتخاب چندتایی، گروه‌بندی و مجازی‌سازی برای داده‌های حجیم.",
-};
 
 export default function DropdownPage() {
   // مثال 1: آیتم‌های ساده

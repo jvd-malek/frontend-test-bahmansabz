@@ -1,14 +1,10 @@
 # Bahman Sabz | Frontend Test
 
+<img src="public/Logo-bahmansabz.webp" alt="Neynegar Logo" width="200"/>
+
 پروژه فرانت‌اند تست بهمن سبز با **Next.js** و **React**.
 
 🌐 **نسخه آنلاین:** [https://frontend-test-bahmansabz.vercel.app/](https://frontend-test-bahmansabz.vercel.app/)
-
----
-
-## لوگو
-
-لوگوی پروژه در هدر و صفحه اصلی استفاده شده است: `public/Logo-bahmansabz.webp`
 
 ---
 
