@@ -280,7 +280,7 @@ function DropdownComponent({
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="جستجو..."
-                          className="w-full rounded-md border border-gray-300 dark:text-gray-500 py-2 pr-10 pl-3 text-sm text-right focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full rounded-md border border-gray-300 py-2 pr-10 pl-3 text-sm text-right focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                           onClick={(e) => e.stopPropagation()}
                         />
                       </div>

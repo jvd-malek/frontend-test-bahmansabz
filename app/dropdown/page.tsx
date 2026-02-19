@@ -1,7 +1,14 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
 import DropdownComponent, { DropdownOption, DropdownGroup } from "@/components/dropdown/dropdown";
+
+export const metadata: Metadata = {
+  title: "کامپوننت Dropdown پیشرفته | بهمن سبز",
+  description:
+    "نمونه‌های مختلف کامپوننت Dropdown پیشرفته با جستجو، انتخاب چندتایی، گروه‌بندی و مجازی‌سازی برای داده‌های حجیم.",
+};
 
 export default function DropdownPage() {
   // مثال 1: آیتم‌های ساده
@@ -51,7 +58,7 @@ export default function DropdownPage() {
 
         <div className="space-y-8 max-w-2xl mx-auto">
           {/* مثال 1: انتخاب چندتایی با جستجو */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">مثال 1: انتخاب چندتایی با جستجو</h2>
             <DropdownComponent
               options={simpleOptions}
@@ -62,13 +69,13 @@ export default function DropdownPage() {
               multiple={true}
               selectAll={true}
             />
-            <div className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+            <div className="mt-2 text-sm text-gray-600">
               انتخاب شده: {selected1.join(", ")}
             </div>
           </div>
 
           {/* مثال 2: گروه‌بندی */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">مثال 2: گروه‌بندی آیتم‌ها</h2>
             <DropdownComponent
               options={groupedOptions}
@@ -80,13 +87,13 @@ export default function DropdownPage() {
               groupable={true}
               selectAll={true}
             />
-            <div className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+            <div className="mt-2 text-sm text-gray-600">
               انتخاب شده: {selected2.join(", ")}
             </div>
           </div>
 
           {/* مثال 3: مجازی‌سازی برای آیتم‌های زیاد */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">مثال 3: مجازی‌سازی (1000 آیتم)</h2>
             <DropdownComponent
               options={manyOptions}
@@ -99,13 +106,13 @@ export default function DropdownPage() {
               virtualized={true}
               maxHeight={400}
             />
-            <div className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+            <div className="mt-2 text-sm text-gray-600">
               {selected3.length} مورد انتخاب شده
             </div>
           </div>
 
           {/* مثال 4: انتخاب تکی */}
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">مثال 4: انتخاب تکی</h2>
             <DropdownComponent
               options={simpleOptions}
@@ -116,7 +123,7 @@ export default function DropdownPage() {
               multiple={false}
               selectAll={false}
             />
-            <div className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+            <div className="mt-2 text-sm text-gray-600">
               انتخاب شده: {selected4[0] || "هیچ"}
             </div>
           </div>

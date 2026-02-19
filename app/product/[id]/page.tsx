@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,6 +27,30 @@ async function fetchProduct(id: string): Promise<Product> {
 
     const data = (await res.json()) as Product;
     return data;
+}
+
+type ProductPageParams = {
+    params: {
+        id: string;
+    };
+};
+
+export async function generateMetadata(
+    { params }: ProductPageParams
+): Promise<Metadata> {
+    const product = await fetchProduct(params.id);
+
+    const title = `${product.title} | جزئیات محصول | بهمن سبز`;
+
+    return {
+        title,
+        description: product.description,
+        openGraph: {
+            title,
+            description: product.description,
+            images: product.thumbnail ? [{ url: product.thumbnail }] : undefined,
+        },
+    };
 }
 
 export default async function ProductPage({ params }: any) {

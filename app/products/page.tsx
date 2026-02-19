@@ -1,4 +1,4 @@
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import ProductBox from "@/components/products/ProductBox";
 
@@ -15,6 +15,12 @@ type DummyJsonResponse = {
   total: number;
   skip: number;
   limit: number;
+};
+
+export const metadata: Metadata = {
+  title: "لیست و فیلتر محصولات | بهمن سبز",
+  description:
+    "مرور، جستجو، فیلتر و صفحه‌بندی محصولات دریافت‌شده از DummyJSON با دسته‌بندی، بازه قیمت و صفحه‌بندی سمت سرور.",
 };
 
 const PAGE_SIZE = 12;

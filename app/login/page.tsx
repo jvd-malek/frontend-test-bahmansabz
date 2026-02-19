@@ -1,8 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AuthInput from "@/components/authInput/AuthInput";
+
+export const metadata: Metadata = {
+  title: "ورود و ثبت‌نام کاربر | بهمن سبز",
+  description:
+    "فرم ورود و ثبت‌نام کاربر آزمایشی با ذخیره اطلاعات در کوکی و هدایت به صفحه اصلی و داشبورد.",
+};
 
 type StoredUser = {
   name: string;

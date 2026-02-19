@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getUserFromCookie } from "@/components/cookie/User";
 import ProductBox from "@/components/products/ProductBox";
 import Link from "next/link";
@@ -16,6 +17,12 @@ type Product = {
   price: number;
   category: string;
   thumbnail: string;
+};
+
+export const metadata: Metadata = {
+  title: "داشبورد کاربران و محصولات | بهمن سبز",
+  description:
+    "داشبورد مدیریت نمای کلی کاربران و محصولات با داده‌های سرور ساید از DummyJSON و تب‌های جداگانه.",
 };
 
 async function getUsers(): Promise<User[]> {
@@ -59,17 +66,12 @@ export default async function Dashboard({ searchParams }: any) {
   const [users, products] = await Promise.all([getUsers(), getProducts()]);
   return (
     <main className="min-h-[calc(100vh-4rem)] bg-slate-100">
+
       <div className="flex h-full items-stretch px-4 py-6" dir="rtl">
         <div className="flex w-full">
-          <input
-            id="dashboard-theme-toggle"
-            type="checkbox"
-            className="peer sr-only"
-          />
-
-          <div className="flex w-full rounded-2xl bg-white text-slate-900 shadow-md transition-colors peer-checked:bg-slate-900 peer-checked:text-slate-100">
+          <div className="flex w-full lg:flex-row flex-col rounded-2xl bg-white text-slate-900 shadow-md transition-colors peer-checked:bg-slate-900 peer-checked:text-slate-100">
             {/* سایدبار ثابت */}
-            <aside className="flex w-64 flex-col border-l border-slate-200 bg-slate-50/80 px-4 py-6 backdrop-blur-sm peer-checked:border-slate-800 peer-checked:bg-slate-900/40">
+            <aside className="flex lg:w-64 w-full lg:rounded-none rounded-2xl flex-col lg:border-l border-b border-slate-200 bg-slate-50/80 px-4 py-6 backdrop-blur-sm peer-checked:border-slate-800 peer-checked:bg-slate-900/40">
               <div className="mb-6 flex items-center justify-between gap-2">
                 <h2 className="text-lg font-semibold">داشبورد</h2>
               </div>
@@ -90,7 +92,7 @@ export default async function Dashboard({ searchParams }: any) {
             </aside>
 
             {/* محتوای داخلی داشبورد */}
-            <main className="flex-1 overflow-y-auto px-6 py-4">
+            <main className="flex-1 overflow-y-auto px-6 py-4 ">
               <div className="space-y-10" dir="rtl">
                 <header className="mb-4 flex items-center justify-between">
                   <div>
