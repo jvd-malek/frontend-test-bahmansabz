@@ -38,7 +38,8 @@ type ProductPageParams = {
 export async function generateMetadata(
     { params }: ProductPageParams
 ): Promise<Metadata> {
-    const product = await fetchProduct(params.id);
+    const { id } = await params;
+    const product = await fetchProduct(id);
 
     const title = `${product.title} | جزئیات محصول | بهمن سبز`;
 
